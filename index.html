@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Green</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- 
+    (Для себя)
+    defer говорит браузеру:
+    загрузи JS сейчас,
+    но выполни его только после загрузки HTML.
+    -->
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- 
+    (Основное задание 1)
+    Создал header с логотипом и навигацией.
+    -->
+    <header class="header">
+        <div class="container header__container">
+
+            <div class="header__logo">
+                <a href="#" class="header__logo-link">
+                    Логотип
+                </a>
+            </div>
+
+            <!-- 
+            (Дополнительное задание 1)
+            Создал burger-menu для мобильных устройств.
+            -->
+            <button class="header__burger" type="button" aria-label="Открыть меню">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Промо</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Новости</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Акции</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Социальные сети</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- 
+    (Основное задание 1)
+    Основной контент страницы.
+    -->
+    <main class="main">
+        <div class="container main__container">
+            
+            <section class="hero">
+
+                <h1 class="hero__title">
+                    Главный заголовок
+                </h1>
+
+                <p class="hero__text">
+                    В своём стремлении повысить качество жизни,
+                    они забывают, что понимание сути ресурсосберегающих технологий играет важную роль.
+                </p>
+
+            </section>
+
+            <!-- 
+            (Задание на создание адаптивности 1)
+            Галерея с адаптивными изображениями.
+            -->
+            <section class="gallery">
+
+                <h2 class="gallery__title">
+                    Зеленые холмы
+                </h2>
+
+                <div class="gallery__list">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_one.jpg" alt="Изображение первого холма">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_two.jpg" alt="Изображение второго холма">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_three.jpg" alt="Изображение третьего холма">
+                    <img class="gallery__image" src="./assets/image/zelenye_holmy_four.jpg" alt="Изображение четвертого холма">
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 
+    (Основное задание 1)
+    Footer сайта.
+    -->
+    <footer class="footer">
+        <div class="container footer__container">
+
+            <nav class="footer__social" aria-label="Социальные сети">
+
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">VK</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">X</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Discord</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">YouTube</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <div class="footer__license">
+                <small class="footer__license-text">
+                    © 2020-2026, компания Company, Inc.
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

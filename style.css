@@ -1,0 +1,454 @@
+/*
+(Для себя)
+Сбрасываю стандартные стили браузера.
+*/
+* {
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+/*
+(Для себя)
+Базовый размер шрифта(нужен для rem).
+Плавный скролл страницы.
+*/
+html {
+    font-size: 16px;
+
+    scroll-behavior: smooth;
+}
+
+/*
+(Для себя)
+Основные стили сайта.
+line-height: 1.5; - Расстояние между строками(улучшает читаемость текста).
+*/
+body {
+    font-family: "Open Sans", sans-serif;
+
+    line-height: 1.5;
+
+    color: #222;
+    background-color: #fff;
+}
+
+/*
+(Основное задание 2)
+"Резиновый" контейнер.
+
+width: 90%;
+Контейнер занимает 90% ширины экрана.
+
+max-width: 1440px;
+Ограничивает ширину на больших мониторах.
+*/
+.container {
+    width: 90%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+/* 
+Стили для header.
+*/
+.header {
+    padding: 20px 0;
+
+    background: linear-gradient(
+        to right,
+        #346401,
+        #2b5300,
+        #1f3b00
+    );
+}
+
+/*
+(Для себя)
+Flex-layout для header.
+
+position: relative; - создаёт систему координат для absolute mobile-menu.
+*/
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    position: relative;
+}
+
+/*
+(Для себя)
+Запрещаем логотипу сжиматься.
+*/
+.header__logo {
+    flex-shrink: 0;
+}
+
+.header__logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: #fff;
+    text-decoration: none;
+}
+
+/*
+(Дополнительное задание 1)
+На desktop burger скрыт.
+
+flex-direction: column; - полоски располагаются вертикально.
+gap: 5px; - расстояние между полосками.
+*/
+.header__burger {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+/*
+(Для себя)
+Полоски burger-menu.
+*/
+.header__burger-line {
+    width: 26px;
+    height: 3px;
+
+    background-color: #fff;
+
+    border-radius: 2px;
+}
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+
+    list-style: none;
+}
+
+.header__nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__nav-link:hover {
+    text-decoration: underline;
+}
+
+/*
+Стили для main.
+*/
+
+.main {
+    padding: 60px 0;
+}
+
+.hero {
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        to right,
+        #346401,
+        #2b5300,
+        #1f3b00
+    );
+
+    color: #fff;
+}
+
+.hero__title {
+    margin-bottom: 20px;
+
+    font-size: 3rem;
+
+    line-height: 1.1;
+}
+
+.hero__text {
+    max-width: 70ch;
+
+    font-size: 1.125rem;
+}
+
+.gallery {
+    margin-top: 40px;
+}
+
+.gallery__title {
+    margin-bottom: 20px;
+
+    font-size: 2rem;
+}
+
+/*
+(Для себя.)
+Grid-layout для изображений.
+
+display: grid; - включил для двумерного расположения элементов.
+
+grid-template-columns: repeat(4, 1fr); - 4 колонки одинаковой ширины.
+repeat 4 - повтори 4 раза.
+1fr - одна доля свободного пространства.
+*/
+.gallery__list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+/*
+(Задание на создание адаптивности 1)
+max-width: 100%; - изображение не выходит за пределы контейнера.
+*/
+.gallery__image {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 20px;
+}
+
+/*
+Стили для footer.
+*/
+
+.footer {
+    padding: 30px 0;
+
+    color: #fff;
+    background-color: #222;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.footer__list {
+    display: flex;
+
+    gap: 20px;
+
+    list-style: none;
+}
+
+.footer__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__license-text {
+    display: block;
+
+    font-size: 0.875rem;
+}
+
+/*
+(Задание на создание адаптивности 2)
+Стили для адаптивности.
+
+Точка перелома 1200px.
+*/
+@media (max-width: 1200px) {
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+}
+
+/*
+(Задание на создание адаптивности 2)
+Точка перелома 992px.
+Галерея становится двухколоночной.
+*/
+@media (max-width: 992px) {
+
+    .gallery__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*
+(Задание на создание адаптивности 2)
+(Основное задание 3)
+Стили для экранов меньше 768px.
+*/
+@media (max-width: 768px) {
+
+    /*
+    (Дополнительное задание 1)
+    Показываем burger-menu.
+    */
+    .header__burger {
+        display: flex;
+    }
+
+    /*
+    Скрываем menu по умолчанию.
+    */
+    .header__nav {
+        display: none;
+
+        /*
+        Меню выпадает поверх страницы.
+        */
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: linear-gradient(
+            to right,
+            #346401,
+            #2b5300,
+            #1f3b00
+        );
+
+        border-radius: 20px;
+        border: 2px solid #fff;
+    }
+
+    /*
+    JS добавляет этот класс при клике.
+    */
+    .header__nav--open {
+        display: block;
+    }
+
+    /*
+    Навигация становится вертикальной.
+    */
+    .header__nav-list {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+    /*
+    Уменьшаем размер заголовков.
+    */
+    .hero__title,
+    .gallery__title {
+        font-size: 2rem;
+    }
+
+    .footer {
+        padding: 24px 0;
+    }
+
+    .footer__container {
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+    .footer__list {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .footer__license-text {
+        font-size: 0.8125rem;
+    }
+}
+
+/*
+(Основное задание 3)
+(Задание на создание адаптивности 2)
+Стили для экранов меньше 480px.
+*/
+@media (max-width: 480px) {
+
+    /*
+    Контент занимает всю ширину экрана.
+    */
+    .container {
+        width: 100%;
+    }
+
+    /*
+    Убираем боковые отступы.
+    */
+    .main {
+        padding: 0;
+    }
+
+    /*
+    Меняем фон элементов.
+    */
+    .hero {
+        border-radius: 0;
+
+        background: #1f3b00;
+    }
+
+    .gallery {
+        padding: 24px 16px;
+
+        background-color: #f2f2f2;
+    }
+
+    /*
+    (Задание на создание адаптивности 1)
+    Галерея становится одноколоночной.
+    */
+    .gallery__list {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        background-color: #111;
+    }
+}
+
+/*
+(Дополнительное задание 2)
+Адаптация под landscape orientation.
+*/
+@media (orientation: landscape) and (max-width: 992px) {
+
+    .main {
+        padding: 30px 0;
+    }
+
+    .hero {
+        padding: 24px;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+}
